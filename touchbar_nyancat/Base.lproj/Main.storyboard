@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="13038"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="14019"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="the Touch Bar" message="Use a version of macOS with Touch Bar support." minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
+        <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
     </dependencies>
     <scenes>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="TouchBar NyanCat by @avatsaev" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="TouchBar NyanCat" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <rect key="contentRect" x="196" y="240" width="325" height="233"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
                         <value key="minSize" type="size" width="480" height="270"/>
                         <value key="maxSize" type="size" width="480" height="270"/>
                         <connections>
@@ -59,7 +58,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-2.5" y="231.5"/>
         </scene>
         <!--Nyan Cat View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -67,53 +66,54 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="NyanCatViewController" customModule="touchbar_nyancat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="218"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="iUM-SV-UtP">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="250"/>
+                            <visualEffectView appearanceType="vibrantDark" ambiguous="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="DBX-qP-vuf">
+                                <rect key="frame" x="0.0" y="0.0" width="311" height="218"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uCH-1A-AJh">
-                                        <rect key="frame" x="413" y="202" width="53" height="32"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="iUM-SV-UtP">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="218"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCH-1A-AJh">
+                                                <rect key="frame" x="244" y="143" width="53" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="41" id="QZ9-15-4hC"/>
+                                                    <constraint firstAttribute="height" constant="21" id="Tel-0Z-dcP"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="push" bezelStyle="rounded" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="Uwj-zc-KXn">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <connections>
+                                                        <action selector="toggle_sound:" target="XfG-lQ-9wD" id="DxC-Yp-VN2"/>
+                                                    </connections>
+                                                </buttonCell>
+                                            </button>
+                                        </subviews>
+                                    </customView>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-xv-P4n">
+                                        <rect key="frame" x="95" y="47" width="121" height="124"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="QZ9-15-4hC"/>
-                                            <constraint firstAttribute="height" constant="21" id="Tel-0Z-dcP"/>
+                                            <constraint firstAttribute="height" constant="124" id="RoQ-MZ-NU4"/>
+                                            <constraint firstAttribute="width" constant="121" id="mTk-cp-YzJ"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="push" bezelStyle="rounded" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="Uwj-zc-KXn">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                            <connections>
-                                                <action selector="toggle_sound:" target="XfG-lQ-9wD" id="DxC-Yp-VN2"/>
-                                            </connections>
-                                        </buttonCell>
-                                    </button>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="icon" id="8Gj-P1-q8c"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="uCH-1A-AJh" firstAttribute="top" secondItem="iUM-SV-UtP" secondAttribute="top" constant="20" id="Jew-ed-Aov"/>
-                                    <constraint firstAttribute="trailing" secondItem="uCH-1A-AJh" secondAttribute="trailing" constant="20" id="ZrN-ZA-iBJ"/>
+                                    <constraint firstItem="iUM-SV-UtP" firstAttribute="leading" secondItem="DBX-qP-vuf" secondAttribute="leading" id="5Kr-6X-rTc"/>
+                                    <constraint firstAttribute="trailing" secondItem="gMT-xv-P4n" secondAttribute="trailing" constant="95" id="7wc-vp-aWx"/>
+                                    <constraint firstAttribute="trailing" secondItem="iUM-SV-UtP" secondAttribute="trailing" id="AOm-ey-4bc"/>
+                                    <constraint firstAttribute="bottom" secondItem="iUM-SV-UtP" secondAttribute="bottom" id="FS4-QT-W27"/>
+                                    <constraint firstItem="gMT-xv-P4n" firstAttribute="top" secondItem="DBX-qP-vuf" secondAttribute="top" constant="47" id="ILP-Ka-Bz5"/>
+                                    <constraint firstAttribute="bottom" secondItem="gMT-xv-P4n" secondAttribute="bottom" constant="47" id="Mr1-wy-KEc"/>
+                                    <constraint firstItem="iUM-SV-UtP" firstAttribute="centerY" secondItem="DBX-qP-vuf" secondAttribute="centerY" id="UYD-ax-iYe"/>
+                                    <constraint firstItem="iUM-SV-UtP" firstAttribute="centerX" secondItem="DBX-qP-vuf" secondAttribute="centerX" id="lEl-9n-s11"/>
+                                    <constraint firstItem="iUM-SV-UtP" firstAttribute="top" secondItem="DBX-qP-vuf" secondAttribute="top" id="ntm-kg-YSD"/>
+                                    <constraint firstItem="gMT-xv-P4n" firstAttribute="leading" secondItem="DBX-qP-vuf" secondAttribute="leading" constant="95" id="wfL-oL-DY1"/>
                                 </constraints>
-                            </customView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-xv-P4n">
-                                <rect key="frame" x="180" y="63" width="121" height="124"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="124" id="RoQ-MZ-NU4"/>
-                                    <constraint firstAttribute="width" constant="121" id="mTk-cp-YzJ"/>
-                                </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon" id="8Gj-P1-q8c"/>
-                            </imageView>
+                            </visualEffectView>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gMT-xv-P4n" secondAttribute="trailing" constant="179" id="3lu-FZ-ahL"/>
-                            <constraint firstAttribute="bottom" secondItem="iUM-SV-UtP" secondAttribute="bottom" id="58N-Hr-GF1"/>
-                            <constraint firstItem="iUM-SV-UtP" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="97e-n6-v5E"/>
-                            <constraint firstItem="iUM-SV-UtP" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="GFI-Ne-BiR"/>
-                            <constraint firstItem="iUM-SV-UtP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="JVR-aH-hpw"/>
-                            <constraint firstAttribute="trailing" secondItem="iUM-SV-UtP" secondAttribute="trailing" id="QVv-rY-vfo"/>
-                            <constraint firstAttribute="bottom" secondItem="gMT-xv-P4n" secondAttribute="bottom" constant="63" id="UK3-mL-juy"/>
-                            <constraint firstItem="gMT-xv-P4n" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="180" id="XcW-pT-FNZ"/>
-                            <constraint firstItem="gMT-xv-P4n" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="63" id="ZhM-b6-ufp"/>
-                            <constraint firstItem="iUM-SV-UtP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="cgm-iG-ydv"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bkg" destination="iUM-SV-UtP" id="Y8L-Wa-nPi"/>
@@ -122,7 +122,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="75" y="766"/>
+            <point key="canvasLocation" x="-9.5" y="750"/>
         </scene>
     </scenes>
     <resources>
